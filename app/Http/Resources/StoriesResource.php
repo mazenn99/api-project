@@ -16,6 +16,7 @@ class StoriesResource extends JsonResource
     {
         // return parent::toArray($request);
         return [
+            'id'          => $this->id,
             'environment' => $this->environment,
             'specialize'  => $this->specialize,
             'companyName' => $this->companyName,

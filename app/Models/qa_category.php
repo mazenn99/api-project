@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ListSpecialize extends Model
+class qa_category extends Model
 {
     //
 }

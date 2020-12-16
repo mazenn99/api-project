@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Models\Comment;
+use App\Models\Favorite;
 use App\Models\Story;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -45,8 +46,12 @@ class User extends Authenticatable
     public function stories() {
         return $this->hasMany(Story::class);
     }
-
+    // comments relations
     public function comments() {
         return $this->hasMany(Comment::class);
+    }
+    // favorites relations
+    public function favorites() {
+        return $this->hasMany(Favorite::class);
     }
 }

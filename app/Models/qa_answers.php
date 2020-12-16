@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Qa_votes extends Model
+class qa_answers extends Model
 {
     //
 }

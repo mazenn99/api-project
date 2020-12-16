@@ -3,13 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\FavoriteRequest;
-use App\Http\Resources\FavoriteResource;
-use App\Models\Favorite;
+use App\Http\Requests\NoticeRequest;
+use App\Models\Notice;
 use App\Traits\apiTraitFunction;
 use Illuminate\Http\Request;
 
-class FavoriteController extends Controller
+class NoticeController extends Controller
 {
     use apiTraitFunction;
     public function __construct() {
@@ -18,17 +17,22 @@ class FavoriteController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return FavoriteResource
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $favorites = auth()->user()->favorites()->paginate(2);
-        if($favorites) {
-            return FavoriteResource::collection($favorites);
-        }
-        return $this->returnResponseError('E011' , 'Sorry not favorite until yet' , 204);
+        //
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -36,14 +40,11 @@ class FavoriteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(FavoriteRequest $request)
+    public function store(NoticeRequest $request)
     {
-        $fav = new Favorite();
-        if ($fav->where(['story_id' => $request->input('story_id'), 'user_id' => auth()->id()])->exists()) { // check favorite if already exists
-            return $this->returnResponseError('E010', 'this already exists in you\'re favorite profile', '406');
-        }
-        $fav->create(['story_id' => $request->input('story_id'), 'user_id' => auth()->id()]);
-        return $this->returnResponseSuccessMessages('added to favorite successfully');
+        $request['user_id'] = auth()->id();
+        Notice::create($request->only('story_id' , 'user_id' , 'description'));
+        return $this->returnResponseSuccessMessages('created noticed successfully');
     }
 
     /**
@@ -66,9 +67,9 @@ class FavoriteController extends Controller
      */
     public function destroy($id)
     {
-        $favorite = Favorite::findOrFail($id);
-        if($favorite->user_id == auth()->id()) {
-            if($favorite->delete()) {
+        $notice = Notice::findOrFail($id);
+        if($notice->user_id == auth()->id()) {
+            if($notice->delete()) {
                 return $this->returnResponseSuccessMessages('Deleted Successfully');
             } else {
                 return $this->returnResponseError('E012' , 'server error not deleted' , 500);

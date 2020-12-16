@@ -18,7 +18,7 @@ Route::group(['namespace' => 'Api', 'middleware' => 'apiPass'], function () {
     // Route Create User , Login User , Update Profile and password , reset password :
     Route::post('register', 'AuthController@register');
     Route::post('login', 'AuthController@login');
-    // using UserController
+    // using UserController update profile and change password
     Route::post('update-profile', 'UserController@updateProfile');
     Route::post('update-password', 'UserController@updatePassword');
     // using ForgetPasswordController , ResetPasswordController
@@ -29,10 +29,15 @@ Route::group(['namespace' => 'Api', 'middleware' => 'apiPass'], function () {
     // Route Stories CRUD :
     Route::apiResource('stories' , 'StoriesController');
     // ------------------------------------------------------------------------------ //
+    // Route Stories CREATE :
     Route::apiResource('comments' , 'CommentController');
     // ------------------------------------------------------------------------------ //
+    // Route CONTACT CREATE :
     Route::post('contact' , 'ContactController@save');
     // ------------------------------------------------------------------------------ //
-    Route::post('favorite' , 'FavoriteController@saveFavorite');
+    // Route FAVORITE INDEX , STORE , DELETE :
+    Route::apiResource('favorite' , 'FavoriteController');
+    // Route Notices
+    Route::apiResource('notices' , 'NoticeController');
 });
 

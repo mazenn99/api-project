@@ -2,32 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01b9ffb7-cd39-42d8-9c20-87fe01185308" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ForgotPasswordController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ResetPasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/apiTjarubPrject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/apiTjarubPrject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/LoginUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/LoginUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateUserProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UpdateUserProfile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/registerUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/registerUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/FavoriteController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/FavoriteRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/FavoriteRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/StoriesResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/StoriesResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ListSpecialize.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ListSpecialize.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Favorite.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Favorite.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Notice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Notice.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/QaQuestion.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/QaQuestion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Qa_votes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Qa_votes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_054311_category.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_054427_comment.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_055302_favorite.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_055737_story.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_055749_lists.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_055807_view_count.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/qa_answers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/qa_answers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/qa_category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/qa_category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/qa_user_details.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/qa_user_details.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/qa_votes_answer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/qa_votes_answer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_184840_create_notices_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_184840_create_notices_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +160,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mojeebApi" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -207,6 +197,7 @@
       <workItem from="1608038441418" duration="58000" />
       <workItem from="1608050967688" duration="13738000" />
       <workItem from="1608090840416" duration="16854000" />
+      <workItem from="1608140806545" duration="8499000" />
     </task>
     <servers />
   </component>
