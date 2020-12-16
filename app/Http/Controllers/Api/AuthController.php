@@ -17,7 +17,7 @@ class AuthController extends Controller
     use apiTraitFunction;
     public function register(registerUser $request) { // this function create new Users
         $request['password'] = bcrypt($request->input('password'));
-        $user = User::create($request->only(['name' , 'email' , 'password']));
+        $user = User::create($request->all());
         if($user) {
             $accessToken = $user->createToken('authToken')->accessToken;
             $user['accessToken'] = $accessToken;

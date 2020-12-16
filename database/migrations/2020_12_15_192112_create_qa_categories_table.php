@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Lists extends Migration
+class CreateQaCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,11 @@ class Lists extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('qa_categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('content');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +27,6 @@ class Lists extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('qa_categories');
     }
 }

@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Models\Comment;
+use App\Models\Story;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -17,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'fullName', 'email', 'password','twitter','bio','askfm','linkedin','imgPath','facebookID','twitterID','facebook','user_university','user_specialist','user_region','agreement','user_faculity','group','created_at','updated_at'
     ];
 
     /**
@@ -37,4 +39,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    // relations of story
+    public function stories() {
+        return $this->hasMany(Story::class);
+    }
+
+    public function comments() {
+        return $this->hasMany(Comment::class);
+    }
 }

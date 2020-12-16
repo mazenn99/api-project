@@ -24,8 +24,21 @@ class UpdateUserProfile extends FormRequest
     public function rules()
     {
         return [
-            'name'      => 'required|min:2|max:100',
-            'email'     => 'required|email|unique:users,email,'.auth()->id(),
+            'fullName'        => 'required|min:2|max:100',
+            'email'           => 'required|email|unique:users,email,'.auth()->id(),
+            'password'        => 'required',
+            'twitter'         => 'nullable|url',
+            'bio'             => 'nullable|max:200',
+            'askfm'           => 'nullable|url|max:45',
+            'linkedin'        => 'nullable|url|max:45',
+            'image'           => 'nullable|mimes:jpg,jpeg,pdf,png|max:5000',
+            'facebookID'      => 'nullable|integer',
+            'twitterID'       => 'nullable|integer',
+            'facebook'        => 'nullable|max:45',
+            'user_university' => 'nullable|string|max:35',
+            'user_specialist' => 'nullable|string|max:35',
+            'user_region'     => 'nullable|string|max:35',
+            'user_faculity'   => 'nullable|string|max:50',
         ];
     }
 }
