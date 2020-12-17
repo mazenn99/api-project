@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     protected $fillable = ['comment' , 'reply_to' , 'user_id' , 'story_id' , 'readed' , 'visitor'];
-
+    public $timestamps = false;
 
     // relation of user
     public function user() {

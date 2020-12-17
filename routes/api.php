@@ -29,8 +29,8 @@ Route::group(['namespace' => 'Api', 'middleware' => 'apiPass'], function () {
     // Route Stories CRUD :
     Route::apiResource('stories' , 'StoriesController');
     // ------------------------------------------------------------------------------ //
-    // Route Stories CREATE : NOT-FINISH
-    #Route::apiResource('comments' , 'CommentController');
+    // Route Comment
+    Route::apiResource('comment' , 'CommentController');
     // ------------------------------------------------------------------------------ //
     // Route CONTACT CREATE :
     Route::post('contact' , 'ContactController@save');

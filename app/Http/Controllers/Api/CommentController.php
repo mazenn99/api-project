@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CommentRequest;
+use App\Http\Resources\CommentResource;
 use App\Traits\apiTraitFunction;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,8 @@ class CommentController extends Controller
      */
     public function store(CommentRequest $request)
     {
-        //
+        $comment = auth()->user()->comments()->create($request->except('apiPassword'));
+        return new CommentResource($comment);
     }
 
 
