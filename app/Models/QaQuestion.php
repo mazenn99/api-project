@@ -18,4 +18,8 @@ class QaQuestion extends Model
     public function user() {
         return $this->belongsTo(User::class);
     }
+    // question relation
+    public function answer() {
+        return $this->hasOne(qa_answers::class , 'qa_question_id');
+    }
 }

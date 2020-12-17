@@ -95,7 +95,6 @@ class QuestionController extends Controller
         $question = QaQuestion::findOrFail($id);
         if(auth()->id() == $question->user_id) {
             if($question->delete()) {
-                $question->delete();
                 return $this->returnResponseSuccessMessages('Deleted Question Successfully');
             }  else {
                 return $this->returnResponseError('E020', 'server error please try again later', 500);

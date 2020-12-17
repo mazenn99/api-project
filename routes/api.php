@@ -14,37 +14,41 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['namespace' => 'Api', 'middleware' => 'apiPass'], function () {
-    // Route Create User , Login User , Update Profile and password , reset password :
-    Route::post('register', 'AuthController@register');
-    Route::post('login', 'AuthController@login');
-    // using UserController update profile and change password
-    Route::post('update-profile', 'UserController@updateProfile');
-    Route::post('update-password', 'UserController@updatePassword');
-    // using ForgetPasswordController , ResetPasswordController
-    Route::post('password/email' , 'ForgotPasswordController@sendResetLinkEmail');
-    Route::post('password/reset' , 'ResetPasswordController@reset');
-    // Route Create User , Login User , Update Profile and password , reset password :
-    // ------------------------------------------------------------------------------ //
-    // Route Stories CRUD :
-    Route::apiResource('stories' , 'StoriesController');
-    // ------------------------------------------------------------------------------ //
-    // Route Comment
-    Route::apiResource('comment' , 'CommentController');
-    // ------------------------------------------------------------------------------ //
-    // Route CONTACT CREATE :
-    Route::post('contact' , 'ContactController@save');
-    // ------------------------------------------------------------------------------ //
-    // Route FAVORITE INDEX , STORE , DELETE :
-    Route::apiResource('favorite' , 'FavoriteController');
-    // ------------------------------------------------------------------------------ //
-    // Route Notices
-    Route::apiResource('notices' , 'NoticeController');
-    // ------------------------------------------------------------------------------ //
-    // Route User details Levels
-    Route::apiResource('level' , 'UserLevelsController');
-    // ------------------------------------------------------------------------------ //
-    // Route Question
-    Route::apiResource('question' , 'QuestionController');
-});
+// Route Create User , Login User , Update Profile and password , reset password :
+Route::post('register', 'AuthController@register');
+Route::post('login', 'AuthController@login');
+// using UserController update profile and change password
+Route::post('update-profile', 'UserController@updateProfile');
+Route::post('update-password', 'UserController@updatePassword');
+// using ForgetPasswordController , ResetPasswordController
+Route::post('password/email' , 'ForgotPasswordController@sendResetLinkEmail');
+Route::post('password/reset' , 'ResetPasswordController@reset');
+// Route Create User , Login User , Update Profile and password , reset password :
+// ------------------------------------------------------------------------------ //
+// Route Stories CRUD :
+Route::apiResource('stories' , 'StoriesController');
+// ------------------------------------------------------------------------------ //
+// Route Comment
+Route::apiResource('comment' , 'CommentController');
+// ------------------------------------------------------------------------------ //
+// Route CONTACT CREATE :
+Route::post('contact' , 'ContactController@save');
+// ------------------------------------------------------------------------------ //
+// Route FAVORITE INDEX , STORE , DELETE :
+Route::apiResource('favorite' , 'FavoriteController');
+// ------------------------------------------------------------------------------ //
+// Route Notices
+Route::apiResource('notices' , 'NoticeController');
+// ------------------------------------------------------------------------------ //
+// Route User details Levels
+Route::apiResource('level' , 'UserLevelsController');
+// ------------------------------------------------------------------------------ //
+// Route Question
+Route::apiResource('question' , 'QuestionController');
+// ------------------------------------------------------------------------------ //
+// Route Answers
+Route::apiResource('answer' , 'QaAnswerController');
+// ------------------------------------------------------------------------------ //
+// Route Votes
+Route::apiResource('votes' , 'VotesController');
 

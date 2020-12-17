@@ -4,7 +4,14 @@
     <list default="true" id="01b9ffb7-cd39-42d8-9c20-87fe01185308" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/CommentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CommentRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CommentRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/QuestionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/StoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/StoriesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/QaQuestion.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/QaQuestion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Qa_votes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Qa_votes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/qa_answers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/qa_answers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_190953_create_qa_answers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_190953_create_qa_answers_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,7 +194,8 @@
       <workItem from="1608050967688" duration="13738000" />
       <workItem from="1608090840416" duration="16854000" />
       <workItem from="1608140806545" duration="9063000" />
-      <workItem from="1608177114533" duration="15359000" />
+      <workItem from="1608177114533" duration="15668000" />
+      <workItem from="1608225326999" duration="13514000" />
     </task>
     <servers />
   </component>

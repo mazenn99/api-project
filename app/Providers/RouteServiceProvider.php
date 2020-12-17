@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'App\Http\Controllers';
+    protected $namespace = 'App\Http\Controllers\Api';
 
     /**
      * The path to the "home" route for your application.
@@ -73,7 +73,7 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapApiRoutes()
     {
         Route::prefix('api')
-             ->middleware('api')
+             ->middleware('apiPass')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
     }

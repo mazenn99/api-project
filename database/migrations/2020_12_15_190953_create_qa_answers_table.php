@@ -24,7 +24,6 @@ class CreateQaAnswersTable extends Migration
             $table->tinyInteger('notify_correct')->default(0)->comment('notify the user was wrote the answer , when his answer is choosed as a correct answer , \n0 not readed\n1 is readed');
             $table->integer('points_answer')->default(20);
             $table->integer('points_correct')->default(50);
-            $table->timestamps();
         });
     }
 

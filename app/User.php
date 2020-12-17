@@ -4,6 +4,7 @@ namespace App;
 
 use App\Models\Comment;
 use App\Models\Favorite;
+use App\Models\qa_answers;
 use App\Models\qa_user_details;
 use App\Models\QaQuestion;
 use App\Models\Story;
@@ -63,5 +64,9 @@ class User extends Authenticatable
     // question relation
     public function questions() {
         return $this->hasMany(QaQuestion::class);
+    }
+    // answer relation
+    public function answers() {
+        return $this->hasManyThrough(qa_answers::class , QaQuestion::class);
     }
 }

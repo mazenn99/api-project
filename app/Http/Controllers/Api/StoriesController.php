@@ -122,7 +122,6 @@ class StoriesController extends Controller
         $story = Story::findOrFail($id);
         if(auth()->id() == $story->user_id) {
             if($story->delete()) {
-                $story->delete();
                 return $this->returnResponseSuccessMessages('Deleted Story Successfully');
             }  else {
                 return $this->returnResponseError('E009' , 'error not deleted please try again later' ,500);
