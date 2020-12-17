@@ -18,7 +18,7 @@ class CreateContactsTable extends Migration
             $table->string('comingfrom' , 45)->comment('email that person , who write a message for us');
             $table->string('subject' , 100);
             $table->text('message');
-            $table->timestamp('created_at')->default(\Carbon\Carbon::now());
+            $table->timestamp('created_at')->useCurrent();
         });
     }
 

@@ -18,13 +18,13 @@ class CreateQaQuestionsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('title' , 120);
             $table->text('description');
-            $table->timestamp('post_date')->default(\Carbon\Carbon::now());
+            $table->timestamp('post_date')->useCurrent();
             $table->integer('views_count')->default(1);
             $table->string('tags' , 200)->nullable();
             $table->tinyInteger('closed')->default(0);
             $table->integer('category')->default(1);
             $table->integer('points')->default(10);
-            $table->timestamp('last_update')->default(\Carbon\Carbon::now());
+            $table->timestamp('last_update')->useCurrent();
         });
     }
 

@@ -29,15 +29,22 @@ Route::group(['namespace' => 'Api', 'middleware' => 'apiPass'], function () {
     // Route Stories CRUD :
     Route::apiResource('stories' , 'StoriesController');
     // ------------------------------------------------------------------------------ //
-    // Route Stories CREATE :
-    Route::apiResource('comments' , 'CommentController');
+    // Route Stories CREATE : NOT-FINISH
+    #Route::apiResource('comments' , 'CommentController');
     // ------------------------------------------------------------------------------ //
     // Route CONTACT CREATE :
     Route::post('contact' , 'ContactController@save');
     // ------------------------------------------------------------------------------ //
     // Route FAVORITE INDEX , STORE , DELETE :
     Route::apiResource('favorite' , 'FavoriteController');
+    // ------------------------------------------------------------------------------ //
     // Route Notices
     Route::apiResource('notices' , 'NoticeController');
+    // ------------------------------------------------------------------------------ //
+    // Route User details Levels
+    Route::apiResource('level' , 'UserLevelsController');
+    // ------------------------------------------------------------------------------ //
+    // Route Question
+    Route::apiResource('question' , 'QuestionController');
 });
 

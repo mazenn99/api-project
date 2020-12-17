@@ -18,7 +18,7 @@ class CreateFavoritesTable extends Migration
             $table->unsignedBigInteger('story_id');
             $table->unsignedBigInteger('user_id');
             $table->tinyInteger('readed')->default(0)->comment('this used by notify , if the user read the notification will be value 1 , if not read it the value will be  0 default value is 0 .');
-            $table->timestamp('created_at')->default(\Carbon\Carbon::now());
+            $table->timestamp('created_at')->useCurrent();
         });
     }
 

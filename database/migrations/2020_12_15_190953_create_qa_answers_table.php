@@ -17,7 +17,7 @@ class CreateQaAnswersTable extends Migration
             $table->id();
             $table->text('description');
             $table->tinyInteger('correct')->default(0)->comment('the only one answer should be correct for question \n0 : not correct choisen - default\n1 : correct choiced .');
-            $table->timestamp('post_date')->default(\Carbon\Carbon::now());
+            $table->timestamp('post_date')->useCurrent();
             $table->unsignedBigInteger('qa_question_id');
             $table->unsignedBigInteger('user_id');
             $table->tinyInteger('notify_answer')->default(0)->comment('record for notification , 0 not readed  , 1 is readed from user ');

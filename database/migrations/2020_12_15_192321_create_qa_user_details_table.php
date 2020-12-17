@@ -17,7 +17,6 @@ class CreateQaUserDetailsTable extends Migration
             $table->id();
             $table->integer('user_level')->default(5);
             $table->unsignedBigInteger('user_id');
-            $table->timestamps();
         });
     }
 

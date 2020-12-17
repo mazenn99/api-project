@@ -21,7 +21,7 @@ class CreateCommentsTable extends Migration
             $table->unsignedBigInteger('story_id');
             $table->unsignedTinyInteger('readed')->default(0);
             $table->string('visitor' , 45)->nullable();
-            $table->timestamp('created_at')->default(\Carbon\Carbon::now());
+            $table->timestamp('created_at')->useCurrent();
         });
     }
 

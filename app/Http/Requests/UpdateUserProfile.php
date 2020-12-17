@@ -26,7 +26,6 @@ class UpdateUserProfile extends FormRequest
         return [
             'fullName'        => 'required|min:2|max:100',
             'email'           => 'required|email|unique:users,email,'.auth()->id(),
-            'password'        => 'required',
             'twitter'         => 'nullable|url',
             'bio'             => 'nullable|max:200',
             'askfm'           => 'nullable|url|max:45',

@@ -4,6 +4,8 @@ namespace App;
 
 use App\Models\Comment;
 use App\Models\Favorite;
+use App\Models\qa_user_details;
+use App\Models\QaQuestion;
 use App\Models\Story;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -53,5 +55,13 @@ class User extends Authenticatable
     // favorites relations
     public function favorites() {
         return $this->hasMany(Favorite::class);
+    }
+    // user level relation
+    public function level() {
+        return $this->hasOne(qa_user_details::class);
+    }
+    // question relation
+    public function questions() {
+        return $this->hasMany(QaQuestion::class);
     }
 }
