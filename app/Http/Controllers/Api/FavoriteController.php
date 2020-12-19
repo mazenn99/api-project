@@ -6,12 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\FavoriteRequest;
 use App\Http\Resources\FavoriteResource;
 use App\Models\Favorite;
-use App\Traits\apiTraitFunction;
-use Illuminate\Http\Request;
 
 class FavoriteController extends Controller
 {
-    use apiTraitFunction;
     public function __construct() {
         $this->middleware('auth:api');
     }
@@ -26,7 +23,7 @@ class FavoriteController extends Controller
         if($favorites) {
             return FavoriteResource::collection($favorites);
         }
-        return $this->returnResponseError('E011' , 'Sorry not favorite until yet' , 204);
+        return $this->returnResponseError('E011' , __('apiError.empty_favorite') , 204);
     }
 
 
@@ -39,11 +36,11 @@ class FavoriteController extends Controller
     public function store(FavoriteRequest $request)
     {
         $fav = new Favorite();
-        if ($fav->where(['story_id' => $request->input('story_id'), 'user_id' => auth()->id()])->exists()) { // check favorite if already exists
-            return $this->returnResponseError('E010', 'this already exists in you\'re favorite profile', '406');
+        if ($fav->where(['article_id' => $request->input('article_id'), 'user_id' => auth()->id()])->exists()) { // check favorite if already exists
+            return $this->returnResponseError('E010', __('apiError.favorite_exists') , '406');
         }
-        $fav->create(['story_id' => $request->input('story_id'), 'user_id' => auth()->id()]);
-        return $this->returnResponseSuccessMessages('added to favorite successfully');
+        $fav->create(['article_id' => $request->input('article_id'), 'user_id' => auth()->id()]);
+        return $this->returnResponseSuccessMessages(__('apiError.send_success', ['name' => __('general.favorite')]));
     }
 
     /**
@@ -69,12 +66,12 @@ class FavoriteController extends Controller
         $favorite = Favorite::findOrFail($id);
         if($favorite->user_id == auth()->id()) {
             if($favorite->delete()) {
-                return $this->returnResponseSuccessMessages('Deleted Successfully');
+                return $this->returnResponseSuccessMessages(__('apiError.delete_success', ['name' => __('general.favorite')]));
             } else {
-                return $this->returnResponseError('E012' , 'server error not deleted' , 500);
+                return $this->returnResponseError('E012' , __('apiError.server_error') , 500);
             }
         } else {
-            return $this->returnResponseError('E013' , 'You Can\'t deleted you don\'t own it' , 403);
+            return $this->returnResponseError('E013' , __('apiError.unauthorized', ['name' => __('general.favorite')]) , 403);
         }
     }
 }

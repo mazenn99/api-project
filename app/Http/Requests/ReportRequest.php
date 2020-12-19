@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserLevelRequest extends FormRequest
+class ReportRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class UserLevelRequest extends FormRequest
     public function rules()
     {
         return [
-            'level' => 'required|integer'
+            'article_id' => 'required|integer|exists:articles,id',
         ];
     }
 }

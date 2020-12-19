@@ -3,14 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\NoticeRequest;
-use App\Models\Notice;
-use App\Traits\apiTraitFunction;
-use Illuminate\Http\Request;
+use App\Http\Requests\ReportRequest;
+use App\Models\Report_us;
+use http\Env\Request;
 
-class NoticeController extends Controller
+class ReportController extends Controller
 {
-    use apiTraitFunction;
     public function __construct() {
         $this->middleware('auth:api');
     }
@@ -40,11 +38,11 @@ class NoticeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(NoticeRequest $request)
+    public function store(ReportRequest $request)
     {
         $request['user_id'] = auth()->id();
-        Notice::create($request->only('story_id' , 'user_id' , 'description'));
-        return $this->returnResponseSuccessMessages('created noticed successfully');
+        Report_us::create($request->only('article_id' , 'user_id' , 'description'));
+        return $this->returnResponseSuccessMessages(__('apiError.send_success', ['name' => __('general.report')]));
     }
 
     /**
@@ -67,15 +65,15 @@ class NoticeController extends Controller
      */
     public function destroy($id)
     {
-        $notice = Notice::findOrFail($id);
-        if($notice->user_id == auth()->id()) {
-            if($notice->delete()) {
-                return $this->returnResponseSuccessMessages('Deleted Successfully');
+        $report = Report_us::findOrFail($id);
+        if($report->user_id == auth()->id()) {
+            if($report->delete()) {
+                return $this->returnResponseSuccessMessages(__('apiError.delete_success', ['name' => __('general.report')]));
             } else {
-                return $this->returnResponseError('E012' , 'server error not deleted' , 500);
+                return $this->returnResponseError('E012' , __('apiError.server_error') , 500);
             }
         } else {
-            return $this->returnResponseError('E013' , 'You Can\'t deleted you don\'t own it' , 403);
+            return $this->returnResponseError('E013' , __('apiError.unauthorized', ['name' => __('general.report')]) , 403);
         }
     }
 }

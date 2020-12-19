@@ -7,16 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Favorite extends Model
 {
-    protected $fillable = ['story_id' , 'user_id' , 'readed'];
+    protected $fillable = ['article_id' , 'user_id' , 'readed'];
     public $timestamps = false;
 
 
 
 
 
-    // realtions of stories
-    public function stories() {
-        return $this->belongsTo(Story::class , 'story_id');
+    // realtions of article
+    public function article() {
+        return $this->belongsTo(Articles::class);
     }
     // realations of user
     public function user() {

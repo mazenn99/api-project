@@ -3,16 +3,13 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoryRequest;
-use App\Http\Resources\StoriesResource;
-use App\Models\Story;
-use App\Traits\apiTraitFunction;
-use Illuminate\Http\Request;
+use App\Http\Requests\ArticleRequest;
+use App\Http\Resources\ArticlesResource;
+use App\Models\Articles;
 use Illuminate\Support\Facades\Storage;
 
-class StoriesController extends Controller
+class ArticleController extends Controller
 {
-    use apiTraitFunction;
     public function __construct() {
         $this->middleware('auth:api')->except('index' , 'show');
     }
@@ -23,7 +20,7 @@ class StoriesController extends Controller
      */
     public function index()
     {
-        return StoriesResource::collection(Story::all());
+        return ArticlesResource::collection(Articles::all());
     }
 
 
@@ -33,12 +30,12 @@ class StoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArticleRequest $request)
     {
         $img = $request->file('picture')->hashName();
-        $upload = $request->file('picture')->storeAs('public/stories/', $img);
+        $upload = $request->file('picture')->storeAs('public/article/', $img);
         if($upload) {
-            $story = auth()->user()->stories()->create([
+            $story = auth()->user()->articles()->create([
                 'environment'   => $request->input('environment'),
                 'specialize'    => $request->input('specialize'),
                 'companyName'   => $request->input('companyName'),
@@ -53,12 +50,12 @@ class StoriesController extends Controller
                 'picture'       => $img,
             ]);
             if($story) {
-                return new StoriesResource($story);
+                return new ArticlesResource($story);
             } else {
-                return $this->returnResponseError('E007' , 'sorry error please try again later' , 500);
+                return $this->returnResponseError('E007' , __('apiError.server_error') , 500);
             }
         } else {
-            return $this->returnResponseError('E008' , 'sorry can\'t upload photo please try again' , 500);
+            return $this->returnResponseError('E008' , __('apiError.upload_error') , 500);
         }
     }
 
@@ -70,8 +67,8 @@ class StoriesController extends Controller
      */
     public function show($id)
     {
-        $story = Story::findOrFail($id);
-        return new StoriesResource($story);
+        $story = Articles::findOrFail($id);
+        return new ArticlesResource($story);
     }
 
 
@@ -82,17 +79,17 @@ class StoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StoryRequest $request, $id)
+    public function update(ArticleRequest $request, $id)
     {
-        $story = Story::findOrFail($id);
+        $article = Articles::findOrFail($id);
         $img = NULL;
-        if(auth()->id() == $story->user_id) {
+        if(auth()->id() == $article->user_id) {
             if($request->file('picture')) {
                 $img = $request->file('picture')->hashName();
-                $upload = $request->file('picture')->storeAs('public/stories/', $img);
-                Storage::delete('public/stories/'.$story->picture);
+                $upload = $request->file('picture')->storeAs('public/article/', $img);
+                Storage::delete('public/article/'.$article->picture);
             }
-            $story->update([
+            $article->update([
                 'environment' => $request->input('environment'),
                 'specialize'  => $request->input('specialize'),
                 'companyName' => $request->input('companyName'),
@@ -103,11 +100,11 @@ class StoriesController extends Controller
                 'category' => $request->input('category'),
                 'title' => $request->input('title'),
                 'tags'  => $request->input('tags'),
-                'picture' => $img ? $img : $story->picture
+                'picture' => $img ? $img : $article->picture
             ]);
-            return new StoriesResource($story);
+            return new ArticlesResource($article);
         } else {
-            return $this->returnResponseError('E008' , 'Unauthorized : you don\'t own this story' , 403);
+            return $this->returnResponseError('E008' , __('apiError.unauthorized', ['name' => __('general.article')]) , 403);
         }
     }
 
@@ -119,15 +116,15 @@ class StoriesController extends Controller
      */
     public function destroy($id)
     {
-        $story = Story::findOrFail($id);
-        if(auth()->id() == $story->user_id) {
-            if($story->delete()) {
-                return $this->returnResponseSuccessMessages('Deleted Story Successfully');
+        $article = Articles::findOrFail($id);
+        if(auth()->id() == $article->user_id) {
+            if($article->delete()) {
+                return $this->returnResponseSuccessMessages(__('apiError.delete_success', ['name' => __('general.article')]));
             }  else {
-                return $this->returnResponseError('E009' , 'error not deleted please try again later' ,500);
+                return $this->returnResponseError('E009' , __('apiError.server_error') ,500);
             }
         } else {
-            return $this->returnResponseError('E010' , 'Unauthorized : you don\'t own this story you can\'t delete it' , 403);
+            return $this->returnResponseError('E010' , __('apiError.unauthorized', ['name' => __('general.article')]) , 403);
         }
     }
 }

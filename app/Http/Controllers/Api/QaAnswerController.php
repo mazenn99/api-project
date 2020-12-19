@@ -6,12 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\qaAnswers;
 use App\Http\Resources\AnswerResource;
 use App\Models\qa_answers;
-use App\Traits\apiTraitFunction;
-use Illuminate\Http\Request;
+
 
 class QaAnswerController extends Controller
 {
-    use apiTraitFunction;
 
     public function __construct()
     {
@@ -101,12 +99,12 @@ class QaAnswerController extends Controller
         $answer = qa_answers::findOrFail($id);
         if(auth()->id() == $answer->user_id) {
             if($answer->delete()) {
-                return $this->returnResponseSuccessMessages('Deleted answer Successfully');
+                return $this->returnResponseSuccessMessages(__('apiError.delete_success', ['name' => __('general.answer')]));
              }  else {
-                return $this->returnResponseError('E024' , 'server error not deleted please try again later' ,500);
+                return $this->returnResponseError('E024' , __('apiError.server_error') ,500);
             }
         } else {
-            return $this->returnResponseError('E025' , 'Unauthorized : you don\'t own this answer you can\'t delete it' , 403);
+            return $this->returnResponseError('E025' , __('apiError.unauthorized', ['name' => __('general.answer')]) , 403);
         }
     }
 }

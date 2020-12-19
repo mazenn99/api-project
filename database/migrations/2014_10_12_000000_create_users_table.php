@@ -34,6 +34,7 @@ class CreateUsersTable extends Migration
             $table->tinyInteger('agreement')->default(0);
             $table->string('user_faculity' , 50)->nullable()->comment('faculity of user');
             $table->integer('group')->default(1)->comment('user category group');
+            $table->integer('user_level')->default(5);
             $table->timestamps();
         });
     }

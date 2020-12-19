@@ -20,6 +20,10 @@ class QaQuestion extends Model
     }
     // question relation
     public function answer() {
-        return $this->hasOne(qa_answers::class , 'qa_question_id');
+        return $this->hasMany(qa_answers::class , 'qa_question_id');
+    }
+    // relations of categories
+    public function cateogries() {
+        return $this->belongsTo(Category::class , 'question_id');
     }
 }

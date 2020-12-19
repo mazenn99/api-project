@@ -6,11 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CommentRequest;
 use App\Http\Resources\CommentResource;
 use App\Models\Comment;
-use App\Traits\apiTraitFunction;
 
 class CommentController extends Controller
 {
-    use apiTraitFunction;
     public function __construct() {
         $this->middleware('auth:api');
     }
@@ -39,12 +37,12 @@ class CommentController extends Controller
         $comment = Comment::findOrFail($id);
         if(auth()->id() == $comment->user_id) {
             if($comment->delete()) {
-                return $this->returnResponseSuccessMessages('Deleted Comment Successfully');
+                return $this->returnResponseSuccessMessages(__('apiError.delete_success', ['name' => __('general.comment')]));
             }  else {
-                return $this->returnResponseError('E009' , 'error not deleted please try again later' ,500);
+                return $this->returnResponseError('E009' , __('apiError.server_error') ,500);
             }
         } else {
-            return $this->returnResponseError('E022' , 'Unauthorized : you don\'t own this comment you can\'t delete it' , 403);
+            return $this->returnResponseError('E022' , __('apiError.unauthorized', ['name' => __('general.comment')]) , 403);
         }
     }
 }

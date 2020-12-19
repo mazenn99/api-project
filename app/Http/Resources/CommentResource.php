@@ -17,7 +17,7 @@ class CommentResource extends JsonResource
         // return parent::toArray($request);
         return [
             'comment' => $this->comment,
-            'story' => $this->story_id,
+            'article' => $this->article_id,
         ];
     }
 }

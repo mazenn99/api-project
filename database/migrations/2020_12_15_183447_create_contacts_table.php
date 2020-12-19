@@ -13,7 +13,7 @@ class CreateContactsTable extends Migration
      */
     public function up()
     {
-        Schema::create('contacts', function (Blueprint $table) {
+        Schema::create('contact_us', function (Blueprint $table) {
             $table->id();
             $table->string('comingfrom' , 45)->comment('email that person , who write a message for us');
             $table->string('subject' , 100);

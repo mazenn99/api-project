@@ -14,8 +14,8 @@ class Comment extends Model
     public function user() {
         return $this->belongsTo(User::class);
     }
-    // relation of story
-    public function story() {
-        return $this->belongsTo(Story::class , 'story_id');
+    // relation of Article
+    public function article() {
+        return $this->belongsTo(Articles::class , 'story_id');
     }
 }

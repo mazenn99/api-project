@@ -2,12 +2,12 @@
 
 namespace App;
 
+use App\Events\SendWelcomeEmailEvent;
 use App\Models\Comment;
 use App\Models\Favorite;
 use App\Models\qa_answers;
-use App\Models\qa_user_details;
 use App\Models\QaQuestion;
-use App\Models\Story;
+use App\Models\Articles;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -23,7 +23,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'fullName', 'email', 'password','twitter','bio','askfm','linkedin','imgPath','facebookID','twitterID','facebook','user_university','user_specialist','user_region','agreement','user_faculity','group','created_at','updated_at'
+        'fullName', 'email', 'password','twitter','bio','askfm','linkedin','imgPath','facebookID','twitterID','facebook','user_university','user_specialist','user_region','agreement','user_faculity','group','created_at','updated_at','user_level'
     ];
 
     /**
@@ -44,10 +44,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * The event map for the model.
+     *
+     * @var array
+     */
+    protected $dispatchesEvents = [
+        'created' => SendWelcomeEmailEvent::class,
+    ];
 
-    // relations of story
-    public function stories() {
-        return $this->hasMany(Story::class);
+
+    // relations of articles
+    public function articles() {
+        return $this->hasMany(Articles::class);
     }
     // comments relations
     public function comments() {
@@ -56,10 +65,6 @@ class User extends Authenticatable
     // favorites relations
     public function favorites() {
         return $this->hasMany(Favorite::class);
-    }
-    // user level relation
-    public function level() {
-        return $this->hasOne(qa_user_details::class);
     }
     // question relation
     public function questions() {

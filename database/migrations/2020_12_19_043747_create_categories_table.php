@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateQaUserDetailsTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateQaUserDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('qa_user_details', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_level')->default(5);
-            $table->unsignedBigInteger('user_id');
+            $table->string('name');
+            $table->enum('type' , ['category' , 'article']);
+            $table->unsignedBigInteger('article_id')->nullable();
+            $table->unsignedBigInteger('question_id')->nullable();
         });
     }
 
@@ -27,6 +29,6 @@ class CreateQaUserDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('qa_user_details');
+        Schema::dropIfExists('categories');
     }
 }

@@ -24,7 +24,7 @@ class FavoriteRequest extends FormRequest
     public function rules()
     {
         return [
-            'story_id' => 'required|integer|exists:stories,id',
+            'article_id' => 'required|integer|exists:articles,id',
         ];
     }
 }

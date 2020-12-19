@@ -25,8 +25,8 @@ Route::post('password/email' , 'ForgotPasswordController@sendResetLinkEmail');
 Route::post('password/reset' , 'ResetPasswordController@reset');
 // Route Create User , Login User , Update Profile and password , reset password :
 // ------------------------------------------------------------------------------ //
-// Route Stories CRUD :
-Route::apiResource('stories' , 'StoriesController');
+// Route Articles CRUD :
+Route::apiResource('article' , 'ArticleController');
 // ------------------------------------------------------------------------------ //
 // Route Comment
 Route::apiResource('comment' , 'CommentController');
@@ -37,11 +37,8 @@ Route::post('contact' , 'ContactController@save');
 // Route FAVORITE INDEX , STORE , DELETE :
 Route::apiResource('favorite' , 'FavoriteController');
 // ------------------------------------------------------------------------------ //
-// Route Notices
-Route::apiResource('notices' , 'NoticeController');
-// ------------------------------------------------------------------------------ //
-// Route User details Levels
-Route::apiResource('level' , 'UserLevelsController');
+// Route Report
+Route::apiResource('report' , 'ReportController');
 // ------------------------------------------------------------------------------ //
 // Route Question
 Route::apiResource('question' , 'QuestionController');
@@ -51,4 +48,7 @@ Route::apiResource('answer' , 'QaAnswerController');
 // ------------------------------------------------------------------------------ //
 // Route Votes
 Route::apiResource('votes' , 'VotesController');
+// ------------------------------------------------------------------------------ //
+// Route Votes
+Route::apiResource('category' , 'CategoryController');
 

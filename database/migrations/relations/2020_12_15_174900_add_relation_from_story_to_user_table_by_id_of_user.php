@@ -13,7 +13,7 @@ class AddRelationFromStoryToUserTableByIdOfUser extends Migration
      */
     public function up()
     {
-        Schema::table('stories', function (Blueprint $table) {
+        Schema::table('articles', function (Blueprint $table) {
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
@@ -28,7 +28,7 @@ class AddRelationFromStoryToUserTableByIdOfUser extends Migration
      */
     public function down()
     {
-        Schema::table('stories', function (Blueprint $table) {
+        Schema::table('article', function (Blueprint $table) {
             $table->dropColumn('user_id');
         });
     }

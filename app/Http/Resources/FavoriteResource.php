@@ -16,7 +16,7 @@ class FavoriteResource extends JsonResource
     {
         // return parent::toArray($request);
         return [
-            'story'                => new StoriesResource($this->stories),
+            'story'                => new ArticlesResource($this->article),
             'readed'               => $this->readed,
             'added_to_favorite_at' => $this->created_at,
         ];

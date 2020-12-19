@@ -5,12 +5,10 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\VotesRequest;
 use App\Models\Qa_votes;
-use App\Traits\apiTraitFunction;
 use Illuminate\Http\Request;
 
 class VotesController extends Controller
 {
-    use apiTraitFunction;
     public function __construct()
     {
         $this->middleware('auth:api');
@@ -23,7 +21,7 @@ class VotesController extends Controller
      */
     public function index()
     {
-        return 'hi';
+        //
     }
 
 
@@ -42,7 +40,7 @@ class VotesController extends Controller
             'vote_code_down' => $request->input('vote_code_down') ?? 0,
             'vote_code_up'   => $request->input('vote_code_up') ?? 0,
         ]);
-        return $this->returnResponseSuccessMessages('successfully created votes');
+        return $this->returnResponseSuccessMessages(__('apiError.send_success', ['name' => __('general.vote')]));
     }
 
     /**
@@ -90,12 +88,12 @@ class VotesController extends Controller
         $vote = Qa_votes::findOrFail($id);
         if(auth()->id() == $vote->user_id) {
             if($vote->delete()) {
-                return $this->returnResponseSuccessMessages('Deleted vote Successfully');
+                return $this->returnResponseSuccessMessages(__('apiError.delete_success', ['name' => __('general.vote')]));
             }  else {
-                return $this->returnResponseError('E026', 'server error please try again later', 500);
+                return $this->returnResponseError('E026', __('apiError.server_error'), 500);
             }
         } else {
-            return $this->returnResponseError('E027' , 'Unauthorized : you don\'t own this vote you can\'t delete it' , 403);
+            return $this->returnResponseError('E027' , __('apiError.unauthorized', ['name' => __('general.vote')]) , 403);
         }
     }
 }

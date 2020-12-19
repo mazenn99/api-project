@@ -2,16 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01b9ffb7-cd39-42d8-9c20-87fe01185308" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/lang/ar/auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/ar/pagination.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/ar/passwords.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/ar/validation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/CommentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ContactController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/FavoriteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/FavoriteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/NoticeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ReportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/QaAnswerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/QaAnswerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/QuestionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/StoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/StoriesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/StoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserLevelsController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/VotesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/VotesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CommentRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CommentRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/FavoriteRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/FavoriteRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/NoticeRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ReportRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoryRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ArticleRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UserLevelRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/CommentResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CommentResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/FavoriteResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/FavoriteResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/StoriesResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ArticlesResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Favorite.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Favorite.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Notice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Report_us.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/QaQuestion.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/QaQuestion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Qa_votes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Qa_votes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/qa_answers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/qa_answers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Story.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Articles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/qa_user_details.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/qa_votes_answer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/qa_votes_answer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_190953_create_qa_answers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_190953_create_qa_answers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_173603_create_stories_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_175259_create_comments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_175259_create_comments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_183447_create_contacts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_183447_create_contacts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_183730_create_favorites_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_183730_create_favorites_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_184840_create_notices_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_184840_create_notices_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_192321_create_qa_user_details_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/relations/2020_12_15_174900_add_relation_from_story_to_user_table_by_id_of_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/relations/2020_12_15_174900_add_relation_from_story_to_user_table_by_id_of_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/relations/2020_12_15_180502_add_relation_with_story_and_user_from_comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/relations/2020_12_15_180502_add_relation_with_story_and_user_from_comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/relations/2020_12_15_184204_add_relations_to_favorites_from_user_and_story.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/relations/2020_12_15_184204_add_relations_to_favorites_from_user_and_story.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/relations/2020_12_15_185223_add_relations_to_notices_table_story_and_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/relations/2020_12_15_185223_add_relations_to_notices_table_story_and_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/relations/2020_12_15_192556_add_relation_to_qa_user_details_from_user.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/test.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -155,7 +195,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/lang/ar" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -167,6 +207,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\apiTjarubPrject\resources\lang\ar" />
+      <recent name="C:\laragon\www\apiTjarubPrject\resources\lang\en" />
       <recent name="C:\laragon\www\apiTjarubPrject\app\Http\Controllers\Api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -195,7 +237,10 @@
       <workItem from="1608090840416" duration="16854000" />
       <workItem from="1608140806545" duration="9063000" />
       <workItem from="1608177114533" duration="15668000" />
-      <workItem from="1608225326999" duration="13514000" />
+      <workItem from="1608225326999" duration="14359000" />
+      <workItem from="1608304858668" duration="17572000" />
+      <workItem from="1608348576170" duration="10767000" />
+      <workItem from="1608397163686" duration="9868000" />
     </task>
     <servers />
   </component>

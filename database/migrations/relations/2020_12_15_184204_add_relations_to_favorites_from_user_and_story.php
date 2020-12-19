@@ -18,9 +18,9 @@ class AddRelationsToFavoritesFromUserAndStory extends Migration
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
-            $table->foreign('story_id')
+            $table->foreign('article_id')
                 ->references('id')
-                ->on('stories')
+                ->on('articles')
                 ->onDelete('cascade');
         });
     }

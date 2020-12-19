@@ -13,14 +13,14 @@ class AddRelationsToNoticesTableStoryAndUser extends Migration
      */
     public function up()
     {
-        Schema::table('notices', function (Blueprint $table) {
+        Schema::table('report_us', function (Blueprint $table) {
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
-            $table->foreign('story_id')
+            $table->foreign('article_id')
                 ->references('id')
-                ->on('stories')
+                ->on('articles')
                 ->onDelete('cascade');
         });
     }

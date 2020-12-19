@@ -6,12 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\QuestionRequest;
 use App\Http\Resources\QuestionResource;
 use App\Models\QaQuestion;
-use App\Traits\apiTraitFunction;
-use Illuminate\Http\Request;
+
 
 class QuestionController extends Controller
 {
-    use apiTraitFunction;
 
     public function __construct()
     {
@@ -42,7 +40,7 @@ class QuestionController extends Controller
         if ($question) {
             return new QuestionResource($question);
         }
-        return $this->returnResponseError('E015', 'server error please try again later', 500);
+        return $this->returnResponseError('E015', __('apiError.server_error'), 500);
     }
 
     /**
@@ -57,9 +55,9 @@ class QuestionController extends Controller
         if ($question->user_id == auth()->id()) {
             return new QuestionResource($question);
         } else {
-            return $this->returnResponseError('E016' , 'Unauthorized : you view it' , 403);
+            return $this->returnResponseError('E016' , __('apiError.unauthorized', ['name' => __('general.question')]) , 403);
         }
-        return $this->returnResponseError('E017', 'server error please try again later', 500);
+        return $this->returnResponseError('E017', __('apiError.server_error'), 500);
     }
 
 
@@ -77,10 +75,10 @@ class QuestionController extends Controller
             if ($question->update($request->except('apiPassword'))) {
                 return new QuestionResource($question);
             } else {
-                return $this->returnResponseError('E018', 'server error please try again later', 500);
+                return $this->returnResponseError('E018', __('apiError.server_error'), 500);
             }
         } else {
-            return $this->returnResponseError('E019', 'can\'t update this question', 403);
+            return $this->returnResponseError('E019', __('apiError.unauthorized', ['name' => __('general.question')]), 403);
         }
     }
 
@@ -95,12 +93,12 @@ class QuestionController extends Controller
         $question = QaQuestion::findOrFail($id);
         if(auth()->id() == $question->user_id) {
             if($question->delete()) {
-                return $this->returnResponseSuccessMessages('Deleted Question Successfully');
+                return $this->returnResponseSuccessMessages(__('apiError.send_success'));
             }  else {
-                return $this->returnResponseError('E020', 'server error please try again later', 500);
+                return $this->returnResponseError('E020', __('apiError.server_error'), 500);
             }
         } else {
-            return $this->returnResponseError('E021' , 'Unauthorized : you don\'t own this question you can\'t delete it' , 403);
+            return $this->returnResponseError('E021' , __('apiError.unauthorized', ['name' => __('general.question')]) , 403);
         }
     }
 }

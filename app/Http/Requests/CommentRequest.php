@@ -26,7 +26,7 @@ class CommentRequest extends FormRequest
         return [
             'comment'  => 'required',
             'reply_to' => 'integer',
-            'story_id' => 'required|integer|exists:stories,id',
+            'story_id' => 'required|integer|exists:article,id',
             'visitor'  => 'nullable|max:45',
         ];
     }
