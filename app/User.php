@@ -6,6 +6,7 @@ use App\Events\SendWelcomeEmailEvent;
 use App\Models\Comment;
 use App\Models\Favorite;
 use App\Models\qa_answers;
+use App\Models\qa_votes_answer;
 use App\Models\QaQuestion;
 use App\Models\Articles;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -73,5 +74,9 @@ class User extends Authenticatable
     // answer relation
     public function answers() {
         return $this->hasManyThrough(qa_answers::class , QaQuestion::class);
+    }
+    // relations of votes answer
+    public function votesAnswer() {
+        return $this->hasMany(qa_votes_answer::class);
     }
 }

@@ -32,7 +32,7 @@ Route::apiResource('article' , 'ArticleController');
 Route::apiResource('comment' , 'CommentController');
 // ------------------------------------------------------------------------------ //
 // Route CONTACT CREATE :
-Route::post('contact' , 'ContactController@save');
+Route::post(        'contact' , 'ContactController@save');
 // ------------------------------------------------------------------------------ //
 // Route FAVORITE INDEX , STORE , DELETE :
 Route::apiResource('favorite' , 'FavoriteController');
@@ -51,4 +51,8 @@ Route::apiResource('votes' , 'VotesController');
 // ------------------------------------------------------------------------------ //
 // Route Votes
 Route::apiResource('category' , 'CategoryController');
+// ------------------------------------------------------------------------------ //
+// Route Votes_answer
+Route::apiResource('votes/answer' , 'QaVotesAnswerController');
+
 
