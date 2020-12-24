@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryRequest;
+use App\Http\Resources\CategoryResource;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return $this->returnResponseWithData(200 , TRUE , '' , 'categories' , Category::orderBy('id' , 'DESC')->get() , 200);
     }
 
 
@@ -41,48 +42,43 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  Int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show($id)
     {
-        //
+        $category = Category::findOrFail($id);
+        return new CategoryResource($category);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Category $category)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Category  $category
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CategoryRequest $request,$category)
+    public function update(CategoryRequest $request,$id)
     {
-        $category = Category::findOrFail($category);
-        if($category->update($request->all())) {
-            return $this->returnResponseSuccessMessages(__('apiError.success'));
+        $category = Category::findOrFail($id);
+        if(auth()->user()->user_level == $this->adminLevel) {
+            if ($category->update($request->all())) {
+                return $this->returnResponseSuccessMessages(__('apiError.success'));
+            }
+            return $this->returnResponseError('E029' , __('apiError.server_error') , 500);
+        } else {
+            return $this->returnResponseError('E010' , __('apiError.unauthorized', ['name' => __('general.category')]) , 403);
         }
-        return $this->returnResponseError('E029' , __('apiError.server_error') , 500);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Category  $category
+     * @param  Int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
         //
     }

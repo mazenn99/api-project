@@ -83,7 +83,7 @@ class ArticleController extends Controller
     {
         $article = Articles::findOrFail($id);
         $img = NULL;
-        if(auth()->id() == $article->user_id) {
+        if($this->checkRole($article) === true) {
             if($request->file('picture')) {
                 $img = $request->file('picture')->hashName();
                 $upload = $request->file('picture')->storeAs('public/article/', $img);
@@ -117,7 +117,7 @@ class ArticleController extends Controller
     public function destroy($id)
     {
         $article = Articles::findOrFail($id);
-        if(auth()->id() == $article->user_id) {
+        if($this->checkRole($article) === true) {
             if($article->delete()) {
                 return $this->returnResponseSuccessMessages(__('apiError.delete_success', ['name' => __('general.article')]));
             }  else {

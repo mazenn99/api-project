@@ -9,7 +9,7 @@ use App\Models\Contact;
 class ContactController extends Controller
 {
     public function save(ContactRequest $request) {
-        if(Contact::create($request->except('apiPassword'))) {
+        if(Contact::create($request->except('api_key'))) {
             return $this->returnResponseSuccessMessages(__('apiError.send_success', ['name' => __('general.contact')]));
         }
     }

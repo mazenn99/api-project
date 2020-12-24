@@ -23,15 +23,6 @@ class QaVotesAnswerController extends Controller
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -63,16 +54,6 @@ class QaVotesAnswerController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -94,6 +75,15 @@ class QaVotesAnswerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $qaVotesAnswer = qa_votes_answer::findOrFail($id);
+        if($this->checkRole($qaVotesAnswer)) {
+            if($qaVotesAnswer->delete()) {
+                return $this->returnResponseSuccessMessages(__('apiError.delete_success', ['name' => __('general.vote')]));
+            }  else {
+                return $this->returnResponseError('E024' , __('apiError.server_error') ,500);
+            }
+        } else {
+            return $this->returnResponseError('E025' , __('apiError.unauthorized', ['name' => __('general.vote')]) , 403);
+        }
     }
 }

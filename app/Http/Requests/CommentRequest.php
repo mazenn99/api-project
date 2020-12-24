@@ -24,10 +24,10 @@ class CommentRequest extends FormRequest
     public function rules()
     {
         return [
-            'comment'  => 'required',
-            'reply_to' => 'integer',
-            'story_id' => 'required|integer|exists:article,id',
-            'visitor'  => 'nullable|max:45',
+            'comment'    => 'required',
+            'reply_to'   => 'integer',
+            'article_id' => 'required|integer|exists:articles,id',
+            'visitor'    => 'nullable|max:45',
         ];
     }
 }

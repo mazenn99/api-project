@@ -14,10 +14,10 @@ class Category extends Model
 
     // relations of article
     public function articles() {
-        return $this->hasMany(Articles::class , 'article_id');
+        return $this->belongsTo(Articles::class , 'article_id');
     }
     // relations of question
     public function questions() {
-        return $this->hasMany(QaQuestion::class , 'question_id');
+        return $this->belongsTo(QaQuestion::class , 'question_id');
     }
 }

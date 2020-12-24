@@ -36,7 +36,7 @@ class QuestionController extends Controller
      */
     public function store(QuestionRequest $request)
     {
-        $question = auth()->user()->questions()->create($request->except('apiPassword'));
+        $question = auth()->user()->questions()->create($request->except('api_key'));
         if ($question) {
             return new QuestionResource($question);
         }
@@ -52,7 +52,7 @@ class QuestionController extends Controller
     public function show($id)
     {
         $question = QaQuestion::findOrFail($id);
-        if ($question->user_id == auth()->id()) {
+        if ($this->checkRole($question)) {
             return new QuestionResource($question);
         } else {
             return $this->returnResponseError('E016' , __('apiError.unauthorized', ['name' => __('general.question')]) , 403);
@@ -71,8 +71,8 @@ class QuestionController extends Controller
     public function update(QuestionRequest $request, $id)
     {
         $question = QaQuestion::findOrFail($id);
-        if ($question->user_id == auth()->id()) {
-            if ($question->update($request->except('apiPassword'))) {
+        if ($this->checkRole($question)) {
+            if ($question->update($request->except('api_key'))) {
                 return new QuestionResource($question);
             } else {
                 return $this->returnResponseError('E018', __('apiError.server_error'), 500);
@@ -91,9 +91,9 @@ class QuestionController extends Controller
     public function destroy($id)
     {
         $question = QaQuestion::findOrFail($id);
-        if(auth()->id() == $question->user_id) {
+        if($this->checkRole($question)) {
             if($question->delete()) {
-                return $this->returnResponseSuccessMessages(__('apiError.send_success'));
+                return $this->returnResponseSuccessMessages(__('apiError.success'));
             }  else {
                 return $this->returnResponseError('E020', __('apiError.server_error'), 500);
             }

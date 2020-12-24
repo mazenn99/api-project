@@ -23,9 +23,9 @@ trait apiTraitFunction {
      */
     public function returnResponseWithData($code , $status , $message = NULL , $key , $value , $statusCode = NULL) {
         return response()->json([
-            'code' => $code,
-            'status' => $status,
-            'message' => $message,
+            'code'      => $code,
+            'status'    => $status,
+            'message'   => $message,
             $key => $value,
         ] , $statusCode);
     }
@@ -38,6 +38,17 @@ trait apiTraitFunction {
         return response()->json([
             'message' => $message
         ] , 200);
+    }
+
+    /*
+     * check the role of user
+     * and return boolبlean value ONLY
+     */
+    public function checkRole($checkRole) {
+        if($checkRole->user_id == auth()->id() || auth()->user()->user_level == $this->adminLevel) {
+            return true;
+        }
+        return false;
     }
 }
 

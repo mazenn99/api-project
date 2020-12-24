@@ -10,5 +10,7 @@ use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
 {
+    // this admin level
+    protected $adminLevel = 1;
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests, apiTraitFunction;
 }

@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use App\Traits\apiTraitFunction;
 use Closure;
 
-class apiPassword
+class apiKey
 {
     use apiTraitFunction;
     /**
@@ -17,7 +17,7 @@ class apiPassword
      */
     public function handle($request, Closure $next)
     {
-        if($request->input('apiPassword') != env('API_PASSWORD','Vnj4ZLHtCXaDEFXuFy0UDH9vGlc4h')) {
+        if($request->header('api_key') != env('API_KEY','Vnj4ZLHtCXaDEFXuFy0UDH9vGlc4h')) {
             return $this->returnResponseError('E001' , 'Unauthorized Access' , 401);
         }
         return $next($request);

@@ -64,7 +64,7 @@ class FavoriteController extends Controller
     public function destroy($id)
     {
         $favorite = Favorite::findOrFail($id);
-        if($favorite->user_id == auth()->id()) {
+        if($this->checkRole($favorite)) {
             if($favorite->delete()) {
                 return $this->returnResponseSuccessMessages(__('apiError.delete_success', ['name' => __('general.favorite')]));
             } else {

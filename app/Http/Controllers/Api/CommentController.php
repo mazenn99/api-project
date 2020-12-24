@@ -21,7 +21,7 @@ class CommentController extends Controller
      */
     public function store(CommentRequest $request)
     {
-        $comment = auth()->user()->comments()->create($request->except('apiPassword'));
+        $comment = auth()->user()->comments()->create($request->all());
         return new CommentResource($comment);
     }
 
@@ -35,7 +35,7 @@ class CommentController extends Controller
     public function destroy($id)
     {
         $comment = Comment::findOrFail($id);
-        if(auth()->id() == $comment->user_id) {
+        if($this->checkRole($comment) === true) {
             if($comment->delete()) {
                 return $this->returnResponseSuccessMessages(__('apiError.delete_success', ['name' => __('general.comment')]));
             }  else {

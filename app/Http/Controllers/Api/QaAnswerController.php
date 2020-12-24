@@ -57,7 +57,7 @@ class QaAnswerController extends Controller
     public function show($id)
     {
         $answer = qa_answers::findOrFail($id);
-        if($answer->user_id == auth()->id()) {
+        if($this->checkRole($answer)) {
             return new AnswerResource($answer);
         }
     }
@@ -73,14 +73,14 @@ class QaAnswerController extends Controller
     public function update(qaAnswers $request, $id)
     {
         $answer = qa_answers::findOrFail($id);
-        if(auth()->id() == $answer->user_id) {
+        if($this->checkRole($answer)) {
             $answer->update([
-                'description'       => $request->input('description'),
-                'correct'           => $request->input('correct'),
-                'notify_answer'     => $request->input('notify_answer'),
-                'notify_correct'    => $request->input('notify_correct'),
-                'points_answer'     => $request->input('points_answer') ,
-                'points_correct'    => $request->input('points_correct') ,
+                'description'       => $request->input('description')       ,
+                'correct'           => $request->input('correct')           ,
+                'notify_answer'     => $request->input('notify_answer')     ,
+                'notify_correct'    => $request->input('notify_correct')    ,
+                'points_answer'     => $request->input('points_answer')     ,
+                'points_correct'    => $request->input('points_correct')    ,
             ]);
             return new AnswerResource($answer);
         } else {
@@ -97,7 +97,7 @@ class QaAnswerController extends Controller
     public function destroy($id)
     {
         $answer = qa_answers::findOrFail($id);
-        if(auth()->id() == $answer->user_id) {
+        if($this->checkRole($answer)) {
             if($answer->delete()) {
                 return $this->returnResponseSuccessMessages(__('apiError.delete_success', ['name' => __('general.answer')]));
              }  else {
