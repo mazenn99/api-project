@@ -86,7 +86,7 @@ class VotesController extends Controller
     public function destroy($id)
     {
         $vote = Qa_votes::findOrFail($id);
-        if($this->checkRole($vote)) {
+        if($this->checkRole($vote) === true) {
             if($vote->delete()) {
                 return $this->returnResponseSuccessMessages(__('apiError.delete_success', ['name' => __('general.vote')]));
             }  else {

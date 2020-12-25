@@ -3,24 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="01b9ffb7-cd39-42d8-9c20-87fe01185308" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/CommentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ContactController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/FavoriteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/FavoriteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/QaAnswerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/QaAnswerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/QaVotesAnswerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/QaVotesAnswerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/QuestionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ReportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/VotesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/VotesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/apiPassword.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CommentRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CommentRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/apiTraitFunction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/apiTraitFunction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +202,7 @@
       <workItem from="1608663619521" duration="7072000" />
       <workItem from="1608695620105" duration="5367000" />
       <workItem from="1608804695335" duration="5346000" />
-      <workItem from="1608831325883" duration="6606000" />
+      <workItem from="1608831325883" duration="8045000" />
     </task>
     <servers />
   </component>

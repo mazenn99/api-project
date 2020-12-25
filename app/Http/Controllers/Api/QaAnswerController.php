@@ -97,7 +97,7 @@ class QaAnswerController extends Controller
     public function destroy($id)
     {
         $answer = qa_answers::findOrFail($id);
-        if($this->checkRole($answer)) {
+        if($this->checkRole($answer) === true) {
             if($answer->delete()) {
                 return $this->returnResponseSuccessMessages(__('apiError.delete_success', ['name' => __('general.answer')]));
              }  else {

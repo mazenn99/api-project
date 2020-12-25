@@ -66,7 +66,7 @@ class ReportController extends Controller
     public function destroy($id)
     {
         $report = Report_us::findOrFail($id);
-        if($this->checkRole($report)) {
+        if($this->checkRole($report) === true) {
             if($report->delete()) {
                 return $this->returnResponseSuccessMessages(__('apiError.delete_success', ['name' => __('general.report')]));
             } else {

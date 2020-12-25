@@ -91,7 +91,7 @@ class QuestionController extends Controller
     public function destroy($id)
     {
         $question = QaQuestion::findOrFail($id);
-        if($this->checkRole($question)) {
+        if($this->checkRole($question) === true) {
             if($question->delete()) {
                 return $this->returnResponseSuccessMessages(__('apiError.success'));
             }  else {
