@@ -37,7 +37,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/psy/psysh" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nunomaduro/collision" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ralouphie/getallheaders" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/type" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/recursion-context" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
@@ -69,12 +68,10 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-normalizer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php80" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/mime" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-ctype" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php72" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/error-handler" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher-contracts" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php73" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-idn" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/console" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-iconv" />
@@ -122,6 +119,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/lcobucci/jwt" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nyholm/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/ui" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php73" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vlucas/phpdotenv" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

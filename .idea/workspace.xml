@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01b9ffb7-cd39-42d8-9c20-87fe01185308" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/apiTjarubPrject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/apiTjarubPrject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/qa_category.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_192112_create_qa_categories_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +54,6 @@
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
-      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
       <path value="$PROJECT_DIR$/vendor/sebastian/type" />
       <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
       <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
@@ -80,12 +85,10 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
       <path value="$PROJECT_DIR$/vendor/symfony/mime" />
-      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
       <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/vendor/symfony/console" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
@@ -133,6 +136,9 @@
       <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
       <path value="$PROJECT_DIR$/vendor/nyholm/psr7" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
     </include_path>
   </component>
   <component name="ProjectId" id="1lg1SYj92gSqZ8JrAf9YzWcJnGr" />
@@ -145,7 +151,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/lang/ar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -153,10 +159,12 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\back-end" />
       <recent name="C:\laragon\www\apiTjarubPrject\resources\lang\ar" />
       <recent name="C:\laragon\www\apiTjarubPrject\resources\lang\en" />
       <recent name="C:\laragon\www\apiTjarubPrject\app\Http\Controllers\Api" />
@@ -203,10 +211,24 @@
       <workItem from="1608695620105" duration="5367000" />
       <workItem from="1608804695335" duration="5346000" />
       <workItem from="1608831325883" duration="8045000" />
+      <workItem from="1609389941031" duration="189000" />
+      <workItem from="1609393888417" duration="392000" />
+      <workItem from="1609409503083" duration="6687000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
