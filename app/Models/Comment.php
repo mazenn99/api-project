@@ -16,6 +16,6 @@ class Comment extends Model
     }
     // relation of Article
     public function article() {
-        return $this->belongsTo(Articles::class , 'story_id');
+        return $this->belongsTo(Articles::class , 'article_id');
     }
 }

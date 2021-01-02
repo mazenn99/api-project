@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01b9ffb7-cd39-42d8-9c20-87fe01185308" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/apiTjarubPrject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/apiTjarubPrject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/qa_category.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_192112_create_qa_categories_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/CommentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/QaAnswerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/QaAnswerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ArticlesResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ArticlesResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Comment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/ar/apiError.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/apiError.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/apiError.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/apiError.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +162,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -213,7 +216,11 @@
       <workItem from="1608831325883" duration="8045000" />
       <workItem from="1609389941031" duration="189000" />
       <workItem from="1609393888417" duration="392000" />
-      <workItem from="1609409503083" duration="6687000" />
+      <workItem from="1609409503083" duration="11410000" />
+      <workItem from="1609495812444" duration="1840000" />
+      <workItem from="1609499265190" duration="6083000" />
+      <workItem from="1609509112156" duration="3362000" />
+      <workItem from="1609587439753" duration="6116000" />
     </task>
     <servers />
   </component>
@@ -230,5 +237,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

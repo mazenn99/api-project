@@ -13,4 +13,5 @@
         'favorite_exists' => 'this already exists in you\'re favorite profile',
         'success' => 'done successfully',
         'password_incorrect' => 'password incorrect',
+        'no_data_search' => 'no data found'
     ];

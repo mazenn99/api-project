@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ArticleRequest;
 use App\Http\Resources\ArticlesResource;
 use App\Models\Articles;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
@@ -20,6 +21,17 @@ class ArticleController extends Controller
      */
     public function index()
     {
+        // check from GET filters request
+        if(request('filter') == 'latest') {
+            return ArticlesResource::collection(Articles::orderBy('id' , 'DESC')->get());
+        } elseif(request('filter') == 'mostInteractive') {
+            return ArticlesResource::collection(Articles::orderBy('numLikes' , 'DESC')->get());
+        } elseif(request('filter') == 'mostViews') {
+            return ArticlesResource::collection(Articles::orderBy('view_count' , 'DESC')->get());
+        } elseif(request('filter') == 'mostComment') {
+            return ArticlesResource::collection(Comment::withCount('article')->orderBy('article_id' , 'DESC')->get());
+        }
+
         return ArticlesResource::collection(Articles::all());
     }
 
@@ -67,8 +79,8 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        $story = Articles::findOrFail($id);
-        return new ArticlesResource($story);
+        $article = Articles::findOrFail($id);
+        return new ArticlesResource($article);
     }
 
 

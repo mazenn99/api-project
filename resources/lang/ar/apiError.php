@@ -13,4 +13,5 @@
         'favorite_exists' => 'موجودة مسبقا في مفضلتك',
         'success' => 'تم بنجاح',
         'password_incorrect' => 'كلمة المرور غير صحيحه',
+        'no_data_search' => 'لايوجد بيانات',
     ];

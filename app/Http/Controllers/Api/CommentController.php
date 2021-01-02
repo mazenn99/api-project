@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CommentRequest;
 use App\Http\Resources\CommentResource;
 use App\Models\Comment;
+use App\Notifications\CommentNotification;
+use App\User;
 
 class CommentController extends Controller
 {
@@ -22,6 +24,9 @@ class CommentController extends Controller
     public function store(CommentRequest $request)
     {
         $comment = auth()->user()->comments()->create($request->all());
+        $user = User::findOrFail($comment->article->user_id);
+        $this->dispatch(new \App\Jobs\sendEmailNotificationJob($user->email));
+        $user->notify(new CommentNotification($comment));
         return new CommentResource($comment);
     }
 

@@ -5,7 +5,10 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\qaAnswers;
 use App\Http\Resources\AnswerResource;
+use App\Jobs\SendEmailQuestionAnswer;
 use App\Models\qa_answers;
+use App\Notifications\QaAnswerNotifications;
+use App\User;
 
 
 class QaAnswerController extends Controller
@@ -45,6 +48,9 @@ class QaAnswerController extends Controller
             'points_answer'     => $request->input('points_answer') ?? 20,
             'points_correct'    => $request->input('points_correct') ?? 50,
         ]);
+        $user = User::findOrFail($answer->question->user_id);
+        $this->dispatch(new SendEmailQuestionAnswer($user->email));
+        $user->notify(new QaAnswerNotifications());
         return new AnswerResource($answer);
     }
 
