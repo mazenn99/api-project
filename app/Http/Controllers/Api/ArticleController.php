@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ArticleRequest;
 use App\Http\Resources\ArticlesResource;
+use App\Http\Resources\CommentResource;
 use App\Models\Articles;
 use App\Models\Comment;
 use Illuminate\Support\Facades\Storage;
@@ -27,11 +28,8 @@ class ArticleController extends Controller
         } elseif(request('filter') == 'mostInteractive') {
             return ArticlesResource::collection(Articles::orderBy('numLikes' , 'DESC')->get());
         } elseif(request('filter') == 'mostViews') {
-            return ArticlesResource::collection(Articles::orderBy('view_count' , 'DESC')->get());
-        } elseif(request('filter') == 'mostComment') {
-            return ArticlesResource::collection(Comment::withCount('article')->orderBy('article_id' , 'DESC')->get());
+            return ArticlesResource::collection(Articles::orderBy('view_count', 'DESC')->get());
         }
-
         return ArticlesResource::collection(Articles::all());
     }
 
