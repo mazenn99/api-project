@@ -36,7 +36,6 @@ class ArticleRequest extends FormRequest
             'tags'        => 'nullable|max:35',
             'draft'       => 'nullable|integer',
             'view_count'  => 'integer',
-            'picture'     => 'mimes:jpg,jpeg,png',
         ];
     }
 }

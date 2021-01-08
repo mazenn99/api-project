@@ -27,6 +27,8 @@ Route::post('password/reset' , 'ResetPasswordController@reset');
 // ------------------------------------------------------------------------------ //
 // Route Articles CRUD :
 Route::apiResource('article' , 'ArticleController');
+// article upload image
+Route::post('article/upload' , 'ArticleController@uploadImage');
 // ------------------------------------------------------------------------------ //
 // Route Comment
 Route::apiResource('comment' , 'CommentController');
@@ -58,4 +60,5 @@ Route::apiResource('votes/answer' , 'QaVotesAnswerController');
 Route::post('question/search' , 'SearchController@QuestionSearch');
 // articles search
 Route::post('article/search' , 'SearchController@ArticleSearch');
+
 
