@@ -7,8 +7,11 @@
     <list default="true" id="01b9ffb7-cd39-42d8-9c20-87fe01185308" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ArticleRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ArticleRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/registerUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/registerUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Articles.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Articles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/apiError.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/apiError.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -221,7 +224,8 @@
       <workItem from="1609587439753" duration="10420000" />
       <workItem from="1609947845240" duration="42000" />
       <workItem from="1609948102968" duration="5000" />
-      <workItem from="1610103933119" duration="8396000" />
+      <workItem from="1610103933119" duration="9409000" />
+      <workItem from="1610219040600" duration="9837000" />
     </task>
     <servers />
   </component>

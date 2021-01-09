@@ -25,7 +25,7 @@ class registerUser extends FormRequest
     {
         return [
             'fullName'        => 'required|min:2|max:100',
-            'email'           => 'required|email|max:100',
+            'email'           => 'required|email|max:100|unique:users,email',
             'password'        => 'required',
             'twitter'         => 'nullable|url',
             'bio'             => 'nullable|max:200',

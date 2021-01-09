@@ -58,7 +58,7 @@ class ArticleController extends Controller
             'title'         => $request->input('title'),
             'tags'          => $request->input('tags'),
             'view_count'    => 0,
-            'picture'       => session()->get('image_'.auth()->id()),
+            'picture'       => $request->input('picture'), // you send just url AS (string) of the picture and save in DB when create new Article
         ]);
         if ($article) {
             session()->forget('image_'.auth()->id());
@@ -78,7 +78,6 @@ class ArticleController extends Controller
         ]);
         $img = $request->file('picture')->hashName();
         $request->file('picture')->storeAs('public/article', $img);
-        session()->put('image_'.auth()->id() , $img);
         return $img;
     }
 

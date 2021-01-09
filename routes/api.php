@@ -60,5 +60,9 @@ Route::apiResource('votes/answer' , 'QaVotesAnswerController');
 Route::post('question/search' , 'SearchController@QuestionSearch');
 // articles search
 Route::post('article/search' , 'SearchController@ArticleSearch');
-
+// ------------------------------------------------------------------------------ //
+// Route Notification
+Route::get('notifications' , 'NotificationController@allNotification');
+Route::get('notifications/read' , 'NotificationController@unReadNotification');
+Route::get('notifications/unread' , 'NotificationController@readNotification');
 

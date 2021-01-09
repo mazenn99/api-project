@@ -22,7 +22,7 @@ class Articles extends Model
         return $this->hasMany(Comment::class , 'article_id');
     }
 
-    // custom attribute return path of picture
+    // custom attribute return entire path of picture with Objects
     public function getPhotoUrlAttribute() {
         return config('app.url') . '/' . Storage::url('article/'.$this->picture) ;
     }
