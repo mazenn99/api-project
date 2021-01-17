@@ -11,6 +11,6 @@ class QaAnswerSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\qa_answers::class , 500)->create();
+        factory(\App\Models\qa_answers::class , 50)->create();
     }
 }

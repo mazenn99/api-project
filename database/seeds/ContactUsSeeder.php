@@ -11,6 +11,6 @@ class ContactUsSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Contact::class , 500)->create();
+        factory(\App\Models\Contact::class , 50)->create();
     }
 }

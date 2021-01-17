@@ -11,6 +11,6 @@ class QaVotesSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Qa_votes::class , 500)->create();
+        factory(\App\Models\Qa_votes::class , 50)->create();
     }
 }

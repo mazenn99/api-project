@@ -11,6 +11,6 @@ class FavoriteSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Favorite::class , 500)->create();
+        factory(\App\Models\Favorite::class , 50)->create();
     }
 }
