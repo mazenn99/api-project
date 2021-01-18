@@ -20,7 +20,11 @@ class QaVotesAnswerController extends Controller
      */
     public function index()
     {
-        //
+        $votesAnswer = auth()->user()->votesAnswer()->paginate($this->paginate);
+		if($votesAnswer) {
+			return $votesAnswer;
+		}
+		return $this->returnResponseError('E041' , 'you don\'t have any votesAnswer' , 403);
     }
 
 
@@ -51,7 +55,8 @@ class QaVotesAnswerController extends Controller
      */
     public function show($id)
     {
-        //
+        // $votesAnswer = qa_votes_answer::findOrFail($id);
+		// return $votesAnswer;
     }
 
 

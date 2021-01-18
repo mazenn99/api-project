@@ -19,7 +19,7 @@ class FavoriteController extends Controller
      */
     public function index()
     {
-        $favorites = auth()->user()->favorites()->paginate(5);
+        $favorites = auth()->user()->favorites()->paginate($this->paginate);
         if($favorites) {
             return FavoriteResource::collection($favorites);
         }

@@ -15,7 +15,7 @@ class ArticleController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api')->except('index', 'show');
+        $this->middleware('auth:api')->except('index', 'show' , 'store');
     }
 
     /**
@@ -27,14 +27,13 @@ class ArticleController extends Controller
     {
         // check from GET filters request
         if (request('filter') == 'latest') {
-            return ArticlesResource::collection(Articles::orderBy('id', 'DESC')->get());
+            return ArticlesResource::collection(Articles::orderBy('id', 'DESC')->paginate($this->paginate));
         } elseif (request('filter') == 'mostInteractive') {
-            return ArticlesResource::collection(Articles::orderBy('numLikes', 'DESC')->get());
+            return ArticlesResource::collection(Articles::orderBy('numLikes', 'DESC')->paginate($this->paginate));
         } elseif (request('filter') == 'mostViews') {
-            return ArticlesResource::collection(Articles::orderBy('view_count', 'DESC')->get());
+            return ArticlesResource::collection(Articles::orderBy('view_count', 'DESC')->paginate($this->paginate));
         }
-
-        return ArticlesResource::collection(Articles::all());
+        return ArticlesResource::collection(Articles::paginate($this->paginate));
     }
 
 
@@ -61,7 +60,6 @@ class ArticleController extends Controller
             'picture'       => $request->input('picture'), // you send just url AS (string) of the picture and save in DB when create new Article
         ]);
         if ($article) {
-            session()->forget('image_'.auth()->id());
             return new ArticlesResource($article);
         } else {
             return $this->returnResponseError('E007', __('apiError.server_error'), 500);

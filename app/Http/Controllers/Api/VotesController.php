@@ -21,7 +21,7 @@ class VotesController extends Controller
      */
     public function index()
     {
-        //
+        // 
     }
 
 

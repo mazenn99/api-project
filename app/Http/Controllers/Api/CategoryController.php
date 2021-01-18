@@ -11,7 +11,7 @@ class CategoryController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api');
+        $this->middleware('auth:api')->except('index');
     }
 
     /**
@@ -21,7 +21,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return $this->returnResponseWithData(200 , TRUE , '' , 'categories' , Category::orderBy('id' , 'DESC')->get() , 200);
+        return $this->returnResponseWithData(200 , TRUE , '' , 'categories' , Category::orderBy('id' , 'DESC')->paginate($this->paginate) , 200);
     }
 
 

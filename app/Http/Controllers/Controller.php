@@ -12,5 +12,7 @@ class Controller extends BaseController
 {
     // this admin level
     protected $adminLevel = 1;
+	// pagination count 
+	protected $paginate = 10;
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests, apiTraitFunction;
 }

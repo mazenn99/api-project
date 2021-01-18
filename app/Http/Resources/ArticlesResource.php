@@ -23,7 +23,7 @@ class ArticlesResource extends JsonResource
             'requirements'=> $this->requirements,
             'contactRule' => $this->contactRule,
             'period'      => $this->period,
-            'num Like'    => $this->numLikes,
+            'num_Like'    => $this->numLikes,
             'description' => $this->description,
             'category'    => $this->category,
             'title'       => $this->title,

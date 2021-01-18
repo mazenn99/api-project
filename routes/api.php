@@ -55,7 +55,7 @@ Route::apiResource('votes' , 'VotesController');
 Route::apiResource('category' , 'CategoryController');
 // ------------------------------------------------------------------------------ //
 // Route Votes_answer
-Route::apiResource('votes/answer' , 'QaVotesAnswerController');
+Route::apiResource('votes_answer' , 'QaVotesAnswerController');
 // Route Search (Article && Question)
 Route::post('question/search' , 'SearchController@QuestionSearch');
 // articles search

@@ -23,7 +23,7 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $question = auth()->user()->questions;
+        $question = auth()->user()->questions()->paginate($this->paginate);
         return QuestionResource::collection($question);
     }
 

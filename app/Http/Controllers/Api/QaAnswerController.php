@@ -26,7 +26,11 @@ class QaAnswerController extends Controller
      */
     public function index()
     {
-        //
+        $answer = auth()->user()->answers()->paginate($this->paginate);
+		if($answer) {
+			return $answer;
+		}
+		return $this->returnResponseError('E040' , 'you don\'t have any answer' , 403);
     }
 
 
